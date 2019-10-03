@@ -100,17 +100,14 @@ public class Game implements MouseListener, ActionListener {
 		} catch (Exception ex) {
 			System.out.println(ex);
 		}
+		
 		try {
-			Image pawprints = ImageIO.read(getClass().getResource("pawprints.png"));
-			pawprintsButton = new JButton(new ImageIcon(pawprints));
-			panel.setLayout(null);
-			panel.add(pawprintsButton);
-			pawprintsButton.addMouseListener(this);
-			pawprintsButton.setBorder(null);
-			pawprintsButton.setBounds(1079, 782, 30, 30);
+			
+			addButton("pawprints.png", 1079, 782);
 		} catch (Exception ex) {
 			System.out.println(ex);
 		}
+		
 		try {
 			Image ring = ImageIO.read(getClass().getResource("WeddingRing.png"));
 			ringButton = new JButton(new ImageIcon(ring));
@@ -118,7 +115,7 @@ public class Game implements MouseListener, ActionListener {
 			panel.add(ringButton);
 			ringButton.addMouseListener(this);
 			ringButton.setBorder(null);
-			ringButton.setBounds(1460, 500, 30, 30);
+			ringButton.setBounds(1079, 782, 30, 30);
 		} catch (Exception ex) {
 			System.out.println(ex);
 		}
@@ -129,7 +126,7 @@ public class Game implements MouseListener, ActionListener {
 			panel.add(snakeButton);
 			snakeButton.addMouseListener(this);
 			snakeButton.setBorder(null);
-			snakeButton.setBounds(1100, 420, 30, 30);
+			snakeButton.setBounds(1460, 500, 30, 30);
 		} catch (Exception ex) {
 			System.out.println(ex);
 		}
@@ -348,6 +345,7 @@ public class Game implements MouseListener, ActionListener {
 		if (checkFoundAll()) {
 			timer.stop();
 			JOptionPane.showMessageDialog(null, "Congratulations! You found all the pictures! \n You finished the puzzle in: " + time + " seconds. \n Ready for level 2?");
+			
 			panel.nextLevelPicture();
 			bar.nextLevelBar();
 			gameNumber += 1;
@@ -400,8 +398,7 @@ public class Game implements MouseListener, ActionListener {
 			checkMeL27 = true;
 		}
 		
-		if (checkMeL2 == true && checkMeL22 == true && checkMeL23 == true && checkMeL24 == true && checkMeL25 == true
-				&& checkMeL26 == true && checkMeL27 == true) {
+		if (checkFoundAll2()) {
 			timer.stop();
 			JOptionPane.showMessageDialog(null, "Congratulations! You found all the pictures! \n You finished the puzzle in: " + time + " seconds.");
 			System.exit(0);
@@ -411,6 +408,11 @@ public class Game implements MouseListener, ActionListener {
 	private boolean checkFoundAll() {
 		return checkMe == true && checkMe2 == true && checkMe3 == true && checkMe4 == true && checkMe5 == true
 				&& checkMe6 == true && checkMe7 == true;
+	}
+	
+	private boolean checkFoundAll2() {
+		return checkMe2 == true && checkMeL22 == true && checkMeL23 == true && checkMeL24 == true && checkMeL25 == true
+				&& checkMeL26 == true && checkMeL27 == true; 
 	}
 
 	@Override

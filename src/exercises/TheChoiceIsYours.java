@@ -4,6 +4,8 @@ public class TheChoiceIsYours {
 	private boolean blackSheep;
 
 	public static void main(String[] args) {
+		
+		
 		TheChoiceIsYours choice = new TheChoiceIsYours();
 
 		// 1. Condense the if statement for the first method
@@ -20,19 +22,12 @@ public class TheChoiceIsYours {
 	}
 
 	boolean condenseIfStatement() {
-		if (blackSheep)
-			return true;
-		else
-			return false;
+	   return blackSheep;
 	}
 
 	String useTernaryOperator() {
-		String whichToGetWith;
-		if (blackSheep)
-			whichToGetWith = "this";
-		else
-			whichToGetWith = "that";
-		return whichToGetWith;
+		return blackSheep ? "this" : "that";
+		
 	}
 
 }
