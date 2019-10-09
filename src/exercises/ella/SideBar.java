@@ -16,8 +16,8 @@ public class SideBar extends JPanel implements ActionListener, KeyListener {
 	JLabel snakeName = new JLabel("snake");
 	JLabel ringName = new JLabel("ring");
 	JLabel backpackName = new JLabel("backpack");
-	JLabel sparkleName = new JLabel("sparkles");
-	JLabel pawprintName = new JLabel("pawprints");
+	JLabel sparklesName = new JLabel("sparkles");
+	JLabel pawprintsName = new JLabel("pawprints");
 	JLabel diamondName = new JLabel("diamond");
 	JLabel balloonName = new JLabel("balloon");
 	JLabel appleName = new JLabel("apple");
@@ -56,61 +56,32 @@ public class SideBar extends JPanel implements ActionListener, KeyListener {
 		repaint();
 
 	}
+	
+	private void ObjectInit(JLabel buttonName, int xPosition, int yPosition, int width) {
+		add(buttonName);
+		buttonName.setFont(new Font("Serif", Font.PLAIN, 30));
+		buttonName.setBounds(xPosition, yPosition, width, 75);}
+	
 
 	void objectNames() {
-
-		
-		add(snakeName);
-		snakeName.setFont(new Font("Serif", Font.PLAIN, 30));
-		snakeName.setBounds(102, findMeY, 100, 75);
-		add(ringName);
-		ringName.setFont(new Font("Serif", Font.PLAIN, 30));
-		ringName.setBounds(113, findMeY2, 100, 75);
-		add(backpackName);
-		backpackName.setFont(new Font("Serif", Font.PLAIN, 30));
-		backpackName.setBounds(83, findMeY3, 275, 75);
-		add(sparkleName);
-		sparkleName.setFont(new Font("Serif", Font.PLAIN, 30));
-		sparkleName.setBounds(90, findMeY4, 250, 75);
-		add(pawprintName);
-		pawprintName.setFont(new Font("Serif", Font.PLAIN, 30));
-		pawprintName.setBounds(83, findMeY5, 275, 75);
-		add(diamondName);
-		diamondName.setFont(new Font("Serif", Font.PLAIN, 30));
-		diamondName.setBounds(87, findMeY6, 250, 75);
-		add(balloonName);
-		balloonName.setFont(new Font("Serif", Font.PLAIN, 30));
-		balloonName.setBounds(95, findMeY7, 250, 75);
-		add(timeName);
-		timeName.setFont(new Font("Serif", Font.PLAIN, 30));
-		timeName.setBounds(95, 850, 250, 75);
-
+		ObjectInit(snakeName, 102, findMeY, 100);
+		ObjectInit(ringName, 113, findMeY2, 100);
+		ObjectInit(backpackName, 83, findMeY3, 275);
+		ObjectInit(sparklesName, 90, findMeY4, 250);
+		ObjectInit(pawprintsName, 83, findMeY5, 275);
+		ObjectInit(diamondName, 87, findMeY6, 250);
+		ObjectInit(balloonName, 95, findMeY7, 250);
+		ObjectInit(timeName, 95, 850, 250);
 	}
 
-	void objectNamesLevelTwo() {
-
-		add(appleName);
-		appleName.setFont(new Font("Serif", Font.PLAIN, 30));
-		appleName.setBounds(102, findMeY, 100, 75);
-		add(bowName);
-		bowName.setFont(new Font("Serif", Font.PLAIN, 30));
-		bowName.setBounds(109, findMeY2, 90, 75);
-		add(roseName);
-		roseName.setFont(new Font("Serif", Font.PLAIN, 30));
-		roseName.setBounds(110, findMeY3, 100, 75);
-		add(cloudName);
-		cloudName.setFont(new Font("Serif", Font.PLAIN, 30));
-		cloudName.setBounds(101, findMeY4, 100, 75);
-		add(chickenName);
-		chickenName.setFont(new Font("Serif", Font.PLAIN, 30));
-		chickenName.setBounds(92, findMeY5, 250, 75);
-		add(earthName);
-		earthName.setFont(new Font("Serif", Font.PLAIN, 30));
-		earthName.setBounds(101, findMeY6, 100, 75);
-		add(cactusName);
-		cactusName.setFont(new Font("Serif", Font.PLAIN, 30));
-		cactusName.setBounds(101, findMeY7, 100, 75);
-
+	void object2Names() {
+		ObjectInit(appleName, 102, findMeY, 100);
+		ObjectInit(bowName, 109, findMeY2, 90);
+		ObjectInit(roseName, 110, findMeY3, 100);
+		ObjectInit(cloudName, 101, findMeY4, 100);
+		ObjectInit(chickenName, 92, findMeY5, 250);
+		ObjectInit(earthName, 101, findMeY6, 100);
+		ObjectInit(cactusName, 101, findMeY7, 100);
 	}
 
 	void nextLevelBar() {
@@ -125,7 +96,7 @@ public class SideBar extends JPanel implements ActionListener, KeyListener {
 		System.out.println(currentBar);
 		if (currentBar == 1) {
 			setBackground(Color.BLUE);
-			objectNamesLevelTwo();
+			object2Names();
 		}
 		repaint();
 
@@ -133,7 +104,7 @@ public class SideBar extends JPanel implements ActionListener, KeyListener {
 
 	void foundSparkles() {
 
-		sparkleName.setVisible(false);
+		sparklesName.setVisible(false);
 
 	}
 
@@ -151,7 +122,7 @@ public class SideBar extends JPanel implements ActionListener, KeyListener {
 
 	void foundPawprint() {
 
-		pawprintName.setVisible(false);
+		pawprintsName.setVisible(false);
 
 	}
 
